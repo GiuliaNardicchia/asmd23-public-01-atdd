@@ -26,11 +26,16 @@ public class CalculatorSteps {
     }
 
     @When("I subtract {int} and {int}")
-    public void iSubtractAnd(String arg0, String arg1) {
-        
+    public void iSubtractAnd(int arg0, int arg1) {
+        this.calculator.enter(arg0);
+        this.calculator.enter(arg1);
     }
 
     @Then("the difference should be {int}")
-    public void theDifferenceShouldBe(String arg0) {
+    public void theDifferenceShouldBe(int arg0) {
+        this.calculator.subtract();
+        if (arg0 != this.calculator.getResult()) {
+            throw new IllegalStateException();
+        }
     }
 }
