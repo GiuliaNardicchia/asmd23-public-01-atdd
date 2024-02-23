@@ -38,4 +38,13 @@ public class CalculatorSteps {
             throw new IllegalStateException();
         }
     }
+
+    @When("I multiply {int} and {int}")
+    public void iMultiplyAnd(int arg0, int arg1) {
+    }
+
+    @Then("the product should be {int}")
+    public void theProductShouldBe(int arg0) {
+    }
+
 }

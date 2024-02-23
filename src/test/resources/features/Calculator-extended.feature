@@ -23,3 +23,12 @@ Feature: Doing operations between numbers with a Calculator
       | 1    | 1    | 0   |
       | 1    | -1   | 2   |
       | -5   | -6   | 1   |
+
+  Scenario Outline: Multiply two numbers
+    When I multiply <arg0> and <arg1>
+    Then the product should be <res>
+    Examples:
+      | arg0 | arg1 | res |
+      | 1    | 1    | 1   |
+      | 1    | -1   | -1  |
+      | -5   | -6   | 30  |
