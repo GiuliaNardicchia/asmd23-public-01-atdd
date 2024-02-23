@@ -12,14 +12,15 @@ public class CalculatorSteps {
         this.calculator = new Calculator();
     }
 
+    private void enterTwoNumbers(int arg0, int arg1) {
+        this.calculator.enter(arg0);
+        this.calculator.enter(arg1);
+    }
+
     private void checkResult(int arg0) {
         if (arg0 != this.calculator.getResult()) { // or using Junit's asserts
             throw new IllegalStateException();
         }
-    }
-    private void enterTwoNumbers(int arg0, int arg1) {
-        this.calculator.enter(arg0);
-        this.calculator.enter(arg1);
     }
 
     @When("I add {int} and {int}")
