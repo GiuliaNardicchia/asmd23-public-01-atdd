@@ -24,4 +24,13 @@ public class CalculatorSteps {
             throw new IllegalStateException();
         }
     }
+
+    @When("I subtract {int} and {int}")
+    public void iSubtractAnd(String arg0, String arg1) {
+        
+    }
+
+    @Then("the difference should be {int}")
+    public void theDifferenceShouldBe(String arg0) {
+    }
 }
