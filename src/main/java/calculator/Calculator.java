@@ -13,10 +13,26 @@ public class Calculator {
     }
 
     public void add(){
+        checkNumberSize();
+        numbers.set(0, numbers.get(0) + numbers.get(1));
+        numbers.remove(1);
+    }
+
+    private void checkNumberSize() {
         if (numbers.size() != 2){
             throw new IllegalStateException();
         }
-        numbers.set(0, numbers.get(0) + numbers.get(1));
+    }
+
+    public void subtract() {
+        checkNumberSize();
+        numbers.set(0, numbers.get(0) - numbers.get(1));
+        numbers.remove(1);
+    }
+
+    public void multiply() {
+        checkNumberSize();
+        numbers.set(0, numbers.get(0) * numbers.get(1));
         numbers.remove(1);
     }
 
@@ -24,15 +40,6 @@ public class Calculator {
         if (numbers.size() != 1){
             throw new IllegalStateException();
         }
-        return numbers.get(0);
-    }
-
-    public int subtract() {
-        if (numbers.size() != 2){
-            throw new IllegalStateException();
-        }
-        numbers.set(0, numbers.get(0) - numbers.get(1));
-        numbers.remove(1);
         return numbers.get(0);
     }
 }
